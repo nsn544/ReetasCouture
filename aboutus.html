@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Latest compiled and minified CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+     <style>
+
+     body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Dropdown Navigation Styling */
+    .nav-link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        z-index: 1000;
+        width: 150px;
+        text-align: center;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f8f9fa;
+    }
+
+    .position-relative:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Size Button Styling */
+    .size-button {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .size-button:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* Button Styling */
+    .btn-custom {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .btn-add-to-cart {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btn-buy-now {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .btn-buy-now:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .hover-zoom img {
+        transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+        width: 150px;
+    }
+
+    .hover-zoom img:hover {
+        transform: scale(1.2); /* Zoom in by 20% */
+    }
+    /* Top Bar */
+.top-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f4f4f4;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  background: #f0f0f0;
+}
+
+/* Show Dropdown on Hover or Click */
+.menu li:hover .dropdown,
+.menu li:focus-within .dropdown {
+  display: flex;
+}
+
+.actions .icon {
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+
+        .footer {
+            background-color: #4e8098; /* Primary brand color */
+            color: white;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        .footer .footer-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .footer .footer-links a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer .social-icons a {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+        .founder-container {
+            padding: 5rem 0;
+        }
+        .founder-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4e8098;
+            margin-bottom: 1rem;
+        }
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6a564d;
+            margin-bottom: 2rem;
+        }
+        .founder-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        .founder-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .spacer {
+            background-color: #f8f9fa;
+        }
+    
+</style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">REETA'S COUTURE</div>
+        <ul class="menu">
+          <li><a href="#shop">Home</a></li>
+          <li>
+            <a href="dressescollection.html">Collections</a>
+            <div class="dropdown">
+              <a href="allwhite.html">All White</a>
+              <a href="#fancy-wear">Fancy Wear</a>
+              <a href="#tops">Tops</a>
+              <a href="#traditional">Traditional</a>
+              <a href="linen1.html">Linen</a>
+              <a href="dressescollection.html">Dresses</a>
+            </div>
+          </li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="actions">
+          <a href="#search" class="icon"><img style="width: 20px ; height: 20px ;" src="search-interface-symbol (1).png" alt="cookies"></a>
+          <a href="newcart.html" class="icon"><img style="width: 20px ; height: 20px ;" src="shopping-cart (2).png" alt="cookies"></a>
+          <a href="myacc.html" class="icon"><img style="width: 20px ; height: 20px ;" src="user.png" alt="cookies"></a>
+        </div>
+      </nav>
+    
+      <div class="container-fluid founder-container row bg-light">
+        <!-- Image Section -->
+        <div class="col-12 col-md-4 text-center">
+            <img src="WhatsApp Image 2024-11-28 at 7.36.51 PM.jpeg" alt="Founder Image" class="founder-image img-fluid">
+        </div>
+    
+        <!-- Spacer for layout -->
+        <div class="col-12 col-md-1 spacer d-none d-md-block"></div>
+    
+        <!-- Founder Text Section -->
+        <div class="col-12 col-md-7">
+            <h3 class="founder-title">Our Founder</h3>
+            <p class="founder-name">Reeta Vimal Dave</p>
+            <p class="founder-text">
+                Reeta Vimal Dave, the visionary founder of Reeta's Couture, is a passionate entrepreneur driven by a deep love for fashion and a commitment to craftsmanship. With years of experience in the industry, she has transformed her vision into a brand that blends timeless elegance with modern style. Reeta's journey began in Gujarat, where she developed a keen understanding of textiles and traditional craftsmanship. Her brand, Reeta's Couture, supports local artisans, empowering communities and contributing to employment generation. Through her dedication to quality and innovation, Reeta has created a luxury fashion brand that celebrates the art of clothing and promotes sustainability, making it a choice for those who appreciate fine craftsmanship and ethical fashion.
+            </p>
+        </div>
+    </div>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Section -->
+            <div class="col-md-3">
+                <h5 class="footer-title">Contact Us</h5>
+                <p>Reeta's Couture</p>
+                <p>Email: support@reetascouture.com</p>
+                <p>Phone: +91 123 456 7890</p>
+            </div>
+            <!-- Navigation Links -->
+            <div class="col-md-3">
+                <h5 class="footer-title">Quick Links</h5>
+                <div class="footer-links">
+                    <a href="#">Shop</a>
+                    <a href="#">Collections</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <!-- Social Media Section -->
+            <div class="col-md-3">
+                <h5 class="footer-title">Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#" class="bi bi-facebook"></a>
+                    <a href="#" class="bi bi-instagram"></a>
+                    <a href="#" class="bi bi-twitter"></a>
+                    <a href="#" class="bi bi-pinterest"></a>
+                </div>
+            </div>
+            <!-- Newsletter Section -->
+            <div class="col-md-3">
+                <h5 class="footer-title">Newsletter</h5>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <button type="submit" class="btn btn-light">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Reeta's Couture. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>

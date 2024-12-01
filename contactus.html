@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f4f4f4;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .menu a:hover {
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .actions .icon {
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .actions .icon img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Contact Form Container */
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 120px auto 0; /* Push down to clear the fixed navbar */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #6a564d;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #6a564d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #523c34;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .thank-you-message {
+            display: none;
+        }
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Dropdown Navigation Styling */
+    .nav-link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        z-index: 1000;
+        width: 150px;
+        text-align: center;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f8f9fa;
+    }
+
+    .position-relative:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Size Button Styling */
+    .size-button {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .size-button:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* Button Styling */
+    .btn-custom {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .btn-add-to-cart {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btn-buy-now {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .btn-buy-now:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .hover-zoom img {
+        transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+        width: 150px;
+    }
+
+    .hover-zoom img:hover {
+        transform: scale(1.2); /* Zoom in by 20% */
+    }
+    /* Top Bar */
+.top-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f4f4f4;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  background: #f0f0f0;
+}
+
+/* Show Dropdown on Hover or Click */
+.menu li:hover .dropdown,
+.menu li:focus-within .dropdown {
+  display: flex;
+}
+
+.actions .icon {
+  margin-left: 15px;
+  font-size: 18px;
+}
+.footer {
+            background-color: #4e8098; /* Primary brand color */
+            color: white;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        .footer .footer-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .footer .footer-links a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer .social-icons a {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+        .founder-container {
+            padding: 5rem 0;
+        }
+        .founder-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4e8098;
+            margin-bottom: 1rem;
+        }
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6a564d;
+            margin-bottom: 2rem;
+        }
+        .founder-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        .founder-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .spacer {
+            background-color: #f8f9fa;
+        }
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Dropdown Navigation Styling */
+    .nav-link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        z-index: 1000;
+        width: 150px;
+        text-align: center;
+    }
+
+    .dropdown-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-menu li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f8f9fa;
+    }
+
+    .position-relative:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Size Button Styling */
+    .size-button {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .size-button:hover {
+        background-color: black;
+        color: white;
+    }
+
+    /* Button Styling */
+    .btn-custom {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .btn-add-to-cart {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btn-buy-now {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .btn-buy-now:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .hover-zoom img {
+        transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+        width: 150px;
+    }
+
+    .hover-zoom img:hover {
+        transform: scale(1.2); /* Zoom in by 20% */
+    }
+    /* Top Bar */
+.top-bar {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f4f4f4;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  background: #f0f0f0;
+}
+
+/* Show Dropdown on Hover or Click */
+.menu li:hover .dropdown,
+.menu li:focus-within .dropdown {
+  display: flex;
+}
+
+.actions .icon {
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+
+        .footer {
+            background-color: #4e8098; /* Primary brand color */
+            color: white;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+        .footer .footer-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .footer .footer-links a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer .social-icons a {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #a77678; /* Hover effect color */
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+        }
+        .founder-container {
+            padding: 5rem 0;
+        }
+        .founder-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4e8098;
+            margin-bottom: 1rem;
+        }
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #6a564d;
+            margin-bottom: 2rem;
+        }
+        .founder-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        .founder-image {
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .spacer {
+            background-color: #f8f9fa;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">REETA'S COUTURE</div>
+        <ul class="menu">
+          <li><a href="homepage.html">Home</a></li>
+          <li>
+            <a href="dressescollection.html">Collections</a>
+            <div class="dropdown">
+              <a href="allwhite.html">All White</a>
+              <a href="#fancy-wear">Fancy Wear</a>
+              <a href="#tops">Tops</a>
+              <a href="#traditional">Traditional</a>
+              <a href="linen1.html">Linen</a>
+              <a href="dressescollection.html">Dresses</a>
+            </div>
+          </li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="actions">
+          <a href="#search" class="icon"><img style="width: 20px ; height: 20px ;" src="search-interface-symbol (1).png" alt="cookies"></a>
+          <a href="newcart.html" class="icon"><img style="width: 20px ; height: 20px ;" src="shopping-cart (2).png" alt="cookies"></a>
+          <a href="myacc.html" class="icon"><img style="width: 20px ; height: 20px ;" src="user.png" alt="cookies"></a>
+        </div>
+      </nav>
+    
+
+    <!-- Contact Form -->
+    <div class="container">
+        <div class="contact-form">
+            <h1>Contact Us</h1>
+            <p>Please fill out the form below, and we’ll get back to you shortly.</p>
+            <form id="contactForm">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="text" class="form-control" placeholder="Subject">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-custom">Submit</button>
+            </form>
+        </div>
+
+        <!-- Thank You Message -->
+        <div class="thank-you-message">
+            <h1>Thank You!</h1>
+            <p>We have received your message. Our team will get back to you shortly.</p>
+            <a href="#" class="btn-custom" id="backToForm">Return to Form</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Select elements
+        const contactForm = document.querySelector('.contact-form');
+        const thankYouMessage = document.querySelector('.thank-you-message');
+        const backToForm = document.getElementById('backToForm');
+        const form = document.getElementById('contactForm');
+
+        // Handle form submission
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent page reload
+            contactForm.style.display = 'none'; // Hide the form
+            thankYouMessage.style.display = 'block'; // Show the thank you message
+        });
+
+        // Handle "Return to Form" button
+        backToForm.addEventListener('click', function (event) {
+            event.preventDefault();
+            thankYouMessage.style.display = 'none'; // Hide the thank you message
+            contactForm.style.display = 'block'; // Show the form
+        });
+    </script>
+   
+</body>
+</html>

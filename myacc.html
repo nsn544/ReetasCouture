@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+
+    <!-- Latest Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-control {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            border-bottom: 1px solid #000;
+        }
+        .btn-save {
+            background-color: #ccc;
+            color: #000;
+        }
+        .btn-logout {
+            background-color: #5a4636;
+            color: #fff;
+        }
+        .btn-logout:hover {
+            background-color: #4b3b2c;
+        }
+        .dropdown-menu {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .gender-options {
+            display: flex;
+            gap: 15px;
+        }
+        .gender-options label {
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5 pt-5">
+
+       <a href="homepage.html"><img src="download.png" height="30px" style="padding-left: 1000px; padding-top:0px;" alt="Close Icon"></a> 
+
+        <h1 class="text-center mb-4">My Account</h1>
+        <form>
+            <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Mobile Number">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Alternate Mobile Number">
+                </div>
+                <div class="col-md-12">
+                    <input type="email" class="form-control" placeholder="Email ID">
+                </div>
+                <div class="col-md-12">
+                    <input type="text" class="form-control" placeholder="Address">
+                </div>
+                <div class="col-md-12">
+                    <div class="gender-options">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                        <label><input type="radio" name="gender" value="Other"> Other</label>
+                        <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Dropdown Button -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle btn-history" type="button" id="orderHistoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Order History
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="orderHistoryDropdown">
+                        <li><a class="dropdown-item" href="#">Order #1: Floral Top - 2480/-</a></li>
+                        <li><a class="dropdown-item" href="#">Order #2: Grape Dress - 3000/-/a></li>
+                        <li><a class="dropdown-item" href="#">Order #3: Linen skirt- 2499/-</a></li>
+                        <li><a class="dropdown-item" href="#">Order #4: Tropical Top-1299/-</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-save me-2">Save</button>
+                    <button type="button" class="btn btn-danger btn-logout">Log Out</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Latest Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

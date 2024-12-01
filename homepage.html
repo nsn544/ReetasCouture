@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reeta's Couture</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #f4f4f4;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+
+    .menu a:hover {
+      background: #ddd;
+      border-radius: 5px;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .dropdown a {
+      padding: 10px 15px;
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .dropdown a:hover {
+      background: #f0f0f0;
+    }
+
+    /* Show Dropdown on Hover or Click */
+    .menu li:hover .dropdown,
+    .menu li:focus-within .dropdown {
+      display: flex;
+    }
+
+    .actions .icon {
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 90vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slider img.active {
+      opacity: 1;
+    }
+
+    .slider-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+    }
+
+    .slider-content p {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .slider-content h1 {
+      margin: 10px 0;
+      font-size: 48px;
+      letter-spacing: 4px;
+    }
+
+    .slider-content .button {
+      text-decoration: none;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Collections Section */
+    .collections-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .collections-section h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .collections-section hr {
+      width: 80px;
+      height: 2px;
+      background: black;
+      margin: 10px auto 30px;
+      border: none;
+    }
+
+    .collections-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .collections-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .collection {
+      flex: 0 0 30%;
+      min-width: 30%;
+      scroll-snap-align: start;
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .collection img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .collection:hover img {
+      transform: scale(1.1);
+    }
+
+    .collection-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+      pointer-events: none;
+    }
+
+    /* Craft Meets Compassion Section */
+    .craft-compassion-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 20px;
+      background-color: #f4f4f4;
+    }
+
+    .craft-compassion-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .map-container {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .gujarat-map {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .craft-compassion-text {
+      flex: 1;
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    .craft-compassion-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .craft-compassion-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Info Section */
+    .info-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .info-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .info-section p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <p>Use REETA10 to avail 10% off on your first purchase | Shipping Worldwide</p>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">REETA'S COUTURE</div>
+    <ul class="menu">
+      <li><a href="#shop">Home</a></li>
+      <li>
+        <a href="dressescollection.html">Collections</a>
+        <div class="dropdown">
+          <a href="allwhite.html">All White</a>
+          <a href="#fancy-wear">Fancy Wear</a>
+          <a href="#tops">Tops</a>
+          <a href="#traditional">Traditional</a>
+          <a href="linen1.html">Linen</a>
+          <a href="dressescollection.html">Dresses</a>
+        </div>
+      </li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+    </ul>
+    <div class="actions">
+      <a href="#search" class="icon"><img style="width: 20px ; height: 20px ;" src="search-interface-symbol (1).png" alt="cookies"></a>
+      <a href="newcart.html" class="icon"><img style="width: 20px ; height: 20px ;" src="shopping-cart (2).png" alt="cookies"></a>
+      <a href="myacc.html" class="icon"><img style="width: 20px ; height: 20px ;" src="user.png" alt="cookies"></a>
+    </div>
+  </nav>
+
+  <!-- Slider Section -->
+  <section class="slider">
+    <img src="img_1.JPG" alt="Image 1" class="active">
+    <img src="img_2.JPG" alt="Image 2">
+    <img src="img_3.JPG" alt="Image 3">
+    <img src="img_4.JPG" alt="Image 4">
+    <img src="img_5.JPG" alt="Image 5">
+
+    <!-- Slider Content -->
+    <div class="slider-content">
+      <p>LIVE NOW</p>
+      <h1>WHITE COLLECTION</h1>
+      <a href="#shop" class="button">SHOP OCCASIONWEAR</a>
+    </div>
+  </section>
+
+
+  
+
+  <!-- Collections Section -->
+  <section class="collections-section" id="collections">
+    <h2>Explore Collections</h2>
+    <hr>
+    <div class="collections-container">
+      <!-- Collection Elements -->
+    <div class="collection">  <a href="allwhite.html"><img style="width: 100%;" src="All White.JPG" alt="All White"></a>  <div class="collection-title">All White</div></div>
+      <div class="collection"> <a href="dressescollection.html"><img src="paplet.JPG" alt="Sundaze"><div class="collection-title">Dresses</div></a> </div>
+      <div class="collection"> <a href="linen1.html"><img src="img_3.JPG" alt="Bageecha"><div class="collection-title">Summer Wear</div></a>  </div>
+      <div class="collection"><img src="blue traditional.JPG" alt="Twilight Bliss"><div class="collection-title">Traditional</div></div>
+      <div class="collection"><img src="fancy.JPG" alt="Moonlit Glow"><div class="collection-title">Fancy</div></div>
+      <div class="collection"><img src="top.JPG" alt="Aurora Hues"><div class="collection-title">Tops</div></div>
+    </div>
+  </section>
+
+  
+  
+  
+
+  <!-- Craft Meets Compassion Section -->
+  <section class="craft-compassion-section">
+    <div class="craft-compassion-container">
+      <div class="map-container">
+        <img style="width: 100% ;" src="gujrat.png" alt="Gujarat Map" class="gujarat-map">
+      </div>
+      <div class="craft-compassion-text">
+        <h2>Where Craft Meets Compassion</h2>
+        <p>In the heart of Gujarat, India, our artisans pour their love and skill into every piece of clothing. Each garment tells a story of tradition, care, and ethical craftsmanship, where every stitch is a step toward a better future for the artisans and their families.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <h3>Slow and Artisanal Luxury Clothing, Handcrafted in India</h3>
+    <p>
+      At Reeta's Couture, we honor the handmade textile traditions of India while working closely with artisans to develop our pieces ethically. Clothing for the modern consumer that explores the warm emotions behind our brand, blending vintage and contemporary Indian aesthetics. Rooted in craftsmanship, our designs reflect our founder's unique sensibilities.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Reeta's Couture. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Slider -->
+  <script>
+    const images = document.querySelectorAll('.slider img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000);
+  </script>
+</body>
+</html>
